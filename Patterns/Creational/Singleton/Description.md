@@ -11,12 +11,12 @@ Every implementation is placed in a separate file and shares four common charact
 - access to singleton is provided using a `public static property` - it is created, if it was not before.
 
 Versions:  
-1.  **bad** [Not thread safe](.\Singleton_v1.cs)
-2.  **bad** [Simple thread-safety](.\Singleton_v2.cs)
-3.  **bad** [Not correct thread-safe with use of double-check locking](.\Singleton_v3.cs)
-4.  **ok** [No locks thread-safe without using locks](.\Singleton_v4.cs)
-5.  **ok** [Fully lazy instatiation](.\Singleton_v5.cs)
-6.  **ok** [Using .NET Lazy\<T\> type](.\Singleton_v6.cs)
+1.  **bad** [Not thread safe](Singleton_v1.cs)
+2.  **bad** [Simple thread-safety](Singleton_v2.cs)
+3.  **bad** [Not correct thread-safe with use of double-check locking](Singleton_v3.cs)
+4.  **ok** [No locks thread-safe without using locks](Singleton_v4.cs)
+5.  **ok** [Fully lazy instatiation](Singleton_v5.cs)
+6.  **ok** [Using .NET Lazy\<T\> type](Singleton_v6.cs)
 
 ## Conclusion:
 
