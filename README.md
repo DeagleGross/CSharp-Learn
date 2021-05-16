@@ -5,30 +5,23 @@ This is an educational repo, that contains various topics cover with C# examples
 # Sources
 Every topic and example has a reference to original source. Here is a list of awesome books, blogs, repos and channels I've taken information from:
 
-<p align="center">
-<b> Blogs </b>
+## Blogs
 | Name | Author |
 | --- | --- |
 | [Asynchronous Programming](https://blog.stephencleary.com/2014/04/a-tour-of-task-part-0-overview.html) | Stephen Cleary |
 | [Stephen Toub blog](https://devblogs.microsoft.com/pfxteam/author/toub/) | Stephen Toub |
 | [Another Brick in the Memory Wall](https://tonyskorik.dev/) | Tony Skorik |
 | [Simon Cooper Redgate hub](https://www.red-gate.com/simple-talk/author/24200-simon-cooper/) | Simon Cooper |
-</p>
 
-<p align="center"> 
-<b> Books </b>
+## Books
 | Name | Author |
 | --- | --- |
 | | |
-</p>
 
-<p align="center">
-<b> Channels </b>
-
+## Channels
 | Name | Author |
 | --- | --- |
 | | |
-</p>
 
 # Contributions
 Feel free to contribute any topic in a Pull Request.  
