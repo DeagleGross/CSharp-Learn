@@ -1,13 +1,13 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using AwaitAnything.Default;
 
 namespace AwaitAnything
 {
     public static class Program
     {
-        public static Task Main()
+        public static async Task Main()
         {
-            
+            await EnumerableAwaiter.MainActivityWithResult();
         }
     }
 }
