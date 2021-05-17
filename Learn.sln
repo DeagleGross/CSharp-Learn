@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{6851401B-B555-4A8F-9025-BB4D4AD1AD93}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Creational", "Creational", "{21E37629-B222-44EC-9B66-0E9E7C617914}"
+	ProjectSection(SolutionItems) = preProject
+		Description.md = Description.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Structural", "Structural", "{098CDC3F-CD4E-4C81-A8AE-9E3A29A4BC7F}"
 EndProject
