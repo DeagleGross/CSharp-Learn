@@ -1,7 +1,6 @@
 # CSharp-Learn
 This is an educational repo, that contains various topics cover with C# examples. All examples are stored in `Learn.sln` solution file at root directory.
 
-
 # Sources
 Every topic and example has a reference to original source. Here is a list of awesome books, blogs, repos and channels I've taken information from:
 
@@ -27,4 +26,5 @@ Every topic and example has a reference to original source. Here is a list of aw
 Feel free to contribute any topic in a Pull Request.  
 Also if you want me to try to explain anything - create an issue. Sure, it will be fun for me to learn something new!
 
-Please, note that every single example has to be stored in a separate directory and independent project with a README-file, explaining that topic. Comments in code a expected for better explanations :)
+Please, note that every single example has to be stored in a separate directory and independent project with a README-file, explaining that topic. 
+Comments in code are expected for better explanations :)
