@@ -1,4 +1,4 @@
-﻿namespace Singleton.Models
+﻿namespace Singleton
 {
     /*
      * Static constructors are executed only when an instance of the class is created

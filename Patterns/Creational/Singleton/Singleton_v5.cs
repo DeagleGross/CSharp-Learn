@@ -1,4 +1,4 @@
-﻿namespace Singleton.Models
+﻿namespace Singleton
 {
     /*
      * This type of instantiation is better than v4 due to

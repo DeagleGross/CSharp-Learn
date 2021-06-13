@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Singleton.Models
+namespace Singleton
 {
     /*
      * .NET 4+ contains `System.Lazy<T>` type to make laziness really simple.

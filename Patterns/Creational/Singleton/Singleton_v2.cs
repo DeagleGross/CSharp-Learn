@@ -1,4 +1,4 @@
-﻿namespace Singleton.Models
+﻿namespace Singleton
 {
     /*
      * This is thread-safe code, but not performant enough

@@ -1,4 +1,4 @@
-﻿namespace Singleton.Models
+﻿namespace Singleton
 {
     /*
      * - Hard to implement (unreadable)
