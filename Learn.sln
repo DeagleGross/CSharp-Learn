@@ -20,17 +20,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "!_Solution Items", "!_Solut
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tasks", "Tasks", "{03870F84-7763-4EE7-B3AB-F9F5A4F0E27C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AwaitAnything", "Tasks\AwaitAnything", "{15C56027-A8DE-49E4-96A8-0A51931C36B8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AwaitAnything", "AwaitAnything", "{15C56027-A8DE-49E4-96A8-0A51931C36B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwaitAnything", "Tasks\AwaitAnything\AwaitAnything.csproj", "{D22398E4-26E7-4780-94A8-5635BEAEDAD9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AwaitAnything", "Tasks\AwaitAnything\AwaitAnything.csproj", "{D22398E4-26E7-4780-94A8-5635BEAEDAD9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sorting", "Sorting", "{88EB323C-28FC-49D7-A5F7-F1E1C5667A7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sorting", "Sorting\Sorting.csproj", "{B953EB4E-9E78-4BE6-8275-15392776472E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sorting", "Sorting\Sorting.csproj", "{B953EB4E-9E78-4BE6-8275-15392776472E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataStructures", "DataStructures", "{FE63581C-7AEF-4F96-BCDB-0224AD7FCED2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructures", "DataStructures\DataStructures\DataStructures.csproj", "{93CE7BB1-4D41-4370-931D-C7DEB8715880}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructures", "DataStructures\DataStructures\DataStructures.csproj", "{93CE7BB1-4D41-4370-931D-C7DEB8715880}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Trees", "Trees", "{C6EE66D3-84D2-4346-9FAE-56B51B0FD777}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trees", "Trees\Trees.csproj", "{57F2D660-6BB8-441B-84AC-DA87126281D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,6 +58,10 @@ Global
 		{93CE7BB1-4D41-4370-931D-C7DEB8715880}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93CE7BB1-4D41-4370-931D-C7DEB8715880}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93CE7BB1-4D41-4370-931D-C7DEB8715880}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57F2D660-6BB8-441B-84AC-DA87126281D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57F2D660-6BB8-441B-84AC-DA87126281D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57F2D660-6BB8-441B-84AC-DA87126281D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57F2D660-6BB8-441B-84AC-DA87126281D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +75,7 @@ Global
 		{D22398E4-26E7-4780-94A8-5635BEAEDAD9} = {15C56027-A8DE-49E4-96A8-0A51931C36B8}
 		{B953EB4E-9E78-4BE6-8275-15392776472E} = {88EB323C-28FC-49D7-A5F7-F1E1C5667A7C}
 		{93CE7BB1-4D41-4370-931D-C7DEB8715880} = {FE63581C-7AEF-4F96-BCDB-0224AD7FCED2}
+		{57F2D660-6BB8-441B-84AC-DA87126281D3} = {C6EE66D3-84D2-4346-9FAE-56B51B0FD777}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2D7423F2-B02B-46B6-85C3-E08C49ED50C5}
