@@ -21,7 +21,9 @@ namespace Sorting
 				new InsertionSort(random),
 				new MergeSort(random),
 				new QuickSort(random),
-				new HeapSort(random)
+				new HeapSort(random),
+				new CountingSort(random),
+				new RadixSort(random)
 			};
 
 			foreach (var sortingMechanism in sortingMechanisms)

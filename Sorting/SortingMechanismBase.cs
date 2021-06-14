@@ -10,7 +10,10 @@ namespace Sorting
 		protected readonly int[] Values;
 		protected readonly int Size;
 
-		protected SortingMechanismBase(Random random, int size = 50)
+        protected const int BotRange = 0;
+        protected const int TopRange = 100;
+
+        protected SortingMechanismBase(Random random, int size = 50)
 		{
 			Size = size;
 			Values = GenerateArrayToSort(random, size);
@@ -64,7 +67,7 @@ namespace Sorting
 
 			for (var i = 0; i < size; i++)
 			{
-				initialSortArray[i] = random.Next(0, 101);
+				initialSortArray[i] = random.Next(BotRange, TopRange + 1);
 			}
 
 			return initialSortArray;
