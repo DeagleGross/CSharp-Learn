@@ -31,3 +31,8 @@ Traversal is movement from node to another one in order to visit all nodes of tr
 
 - DFS - basic traversal algorithm. Order of visits is following: root -> first neighbour, its first neighbour, ... , second root's neighbour, its first neighbour and etc. So going in `depth` :)
     DFS traversal: `F B A D C E G I H`
+
+## Representations
+---
+- **Matrix**: in columns and in rows there are names of nodes. Cross of column `A` and row `B` is the length of edge between `A - B`
+- **Adjacency list**: a list of node-classes, every node-class has a list of neighbour nodes as a field. 

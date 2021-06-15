@@ -25,10 +25,14 @@ namespace Trees.Binary
 
         internal IList<T> PreorderTraversal(TreeNode root)
         {
+            var nodes = new List<T>();
 
+            PreorderTraverseInternal(root, nodes);
+
+            return nodes;
         }
 
-        private void PreorderTraverse(TreeNode node, IList<T> nodes)
+        private static void PreorderTraverseInternal(TreeNode node, IList<T> nodes)
         {
             if (node == null)
             {
@@ -39,10 +43,10 @@ namespace Trees.Binary
             nodes.Add(node.Value);
 
             // left
-            PreorderTraverse(node.Left, nodes);
+            PreorderTraverseInternal(node.Left, nodes);
 
             // right
-            PreorderTraverse(node.Right, nodes);
+            PreorderTraverseInternal(node.Right, nodes);
         }
     }
 }
