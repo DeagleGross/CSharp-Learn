@@ -35,4 +35,4 @@ Traversal is movement from node to another one in order to visit all nodes of tr
 ## Representations
 ---
 - **Matrix**: in columns and in rows there are names of nodes. Cross of column `A` and row `B` is the length of edge between `A - B`
-- **Adjacency list**: a list of node-classes, every node-class has a list of neighbour nodes as a field. 
+- **Adjacency list**: a list of node-classes, every node-class has a list of neighbour nodes as a field.
