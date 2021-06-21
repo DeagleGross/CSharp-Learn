@@ -6,23 +6,29 @@ Operations:
 - increment
 - decrement (if you are decrementing 0 value, semaphore is blocked)
 
-Semaphore is released, when process increments semaphore, indicating work is finished.
+Imagine you create a semaphore of `N` capacity. Process `A` takes control of resources, that semaphore is watching and `semaphore's value` equals to `N-1` now. Another process `B` takes control of resource, and so semaphore's value equals to `N-2`. When process tries to get control and semaphore is just a `zero`, then a stop-signal occurs - you can not take control of `zero-value semaphore`.
 
 ### Mutex
-A variable with 2 states - locked and free.
+Another synchronization approach - it is just a semaphore of single capacity. Only 1 thread can take lock of some resources, controlled by mutex.
 
 ### Monitor
-`lock(object)` in c# implemented using monitors.
+`lock(object)` in .NET is implemented using monitors. It is always a marshalling to operating system API and 
 
 ---
 
 ## About Processes & Threads 
 [Link](https://docs.microsoft.com/en-gb/windows/win32/procthread/about-processes-and-threads?redirectedfrom=MSDN)
 
-`Process`  
+`Process`    
+```
+Process - approach to virtualize memory. (c) Richter
+```   
 Each process provides the resources needed to execute a program. A process has a virtual address space, executable code, open handles to system objects, a security context, a unique process identifier, environment variables, a priority class, minimum and maximum working set sizes, and at least one thread of execution. Each process is started with a single thread, often called the primary thread, but can create additional threads from any of its threads.
 
-`Thread`  
+`Thread`   
+```
+Thread - approach to virtualize processor. (c) Richter
+```    
 A thread is an entity within a process that can be scheduled for execution. All threads of a process share its virtual address space and system resources. In addition, each thread maintains exception handlers, a scheduling priority, thread local storage, a unique thread identifier, and a set of structures the system will use to save the thread context until it is scheduled. The thread context includes the thread's set of machine registers, the kernel stack, a thread environment block, and a user stack in the address space of the thread's process. Threads can also have their own security context, which can be used for impersonating clients.
 
 `Context switches`  
