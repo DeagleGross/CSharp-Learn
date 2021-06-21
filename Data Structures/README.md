@@ -1,3 +1,4 @@
 # Data Structures
 ---
-- [Hashtable](./DataStructures/HashTable.cs) implementation (described by Simon Cooper) [link](https://www.red-gate.com/simple-talk/blogs/the-net-dictionary/) 
+This is a project for implementing different data structures.  
+Please, provide unit-tests for making sure your code is correct
