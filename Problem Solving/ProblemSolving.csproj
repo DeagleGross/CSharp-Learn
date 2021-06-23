@@ -15,7 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Monthly Challenges\" />
     <Folder Include="Free Tasks\" />
     <Folder Include="Topics\" />
   </ItemGroup>
