@@ -4,11 +4,12 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 
+/// <summary>
+/// https://leetcode.com/explore/challenge/card/june-leetcoding-challenge-2021/607/week-5-june-29th-june-30th/3796/
+/// </summary>
+
 namespace MaxConsecutiveOnes
 {
-	/// <summary>
-	/// https://leetcode.com/explore/challenge/card/june-leetcoding-challenge-2021/607/week-5-june-29th-june-30th/3796/
-	/// </summary>
 	class Program
 	{
 		static void Main(string[] args)
