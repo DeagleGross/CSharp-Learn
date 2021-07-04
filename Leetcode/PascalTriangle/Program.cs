@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Shouldly;
 
-namespace ProblemSolving.Monthly_Challenges.June_2021
+/// <summary>
+/// https://leetcode.com/problems/pascals-triangle/
+/// </summary>
+
+namespace PascalTriangle
 {
-    [TestClass]
-    public class PascalTriangle : IOlympiadTask
+    class Program
     {
         public IList<IList<int>> Generate(int numRows)
         {
@@ -34,17 +32,21 @@ namespace ProblemSolving.Monthly_Challenges.June_2021
             return result;
         }
 
-        [TestMethod]
-        public void Solve()
+        static void Main(string[] args)
         {
-            var res_1 = Generate(5);
-            res_1.Count.ShouldBe(5);
+            var program = new Program();
 
-            res_1[0].ShouldBe(new []{ 1 });
-            res_1[1].ShouldBe(new []{ 1, 1 });
-            res_1[2].ShouldBe(new []{ 1, 2, 1 });
-            res_1[3].ShouldBe(new []{ 1, 3, 3, 1 });
-            res_1[4].ShouldBe(new []{ 1, 4, 6, 4, 1 });
+            var triangle = program.Generate(5);
+
+            foreach (var row in triangle)
+            {
+                foreach (var symbol in row)
+                {
+                    Console.Write($"{symbol} ");
+                }
+
+                Console.WriteLine();
+            }
         }
     }
 }
