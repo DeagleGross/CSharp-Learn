@@ -44,7 +44,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaxConsecutiveOnes", "Leetc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PascalTriangle", "Leetcode\PascalTriangle\PascalTriangle.csproj", "{2FE98F56-2CA4-41BB-BFBF-70F7A070236E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContainerWithMostWater", "Leetcode\ContainerWithMostWater\ContainerWithMostWater.csproj", "{ADE34EDE-D041-4791-A1A7-1BA78D9C79BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContainerWithMostWater", "Leetcode\ContainerWithMostWater\ContainerWithMostWater.csproj", "{ADE34EDE-D041-4791-A1A7-1BA78D9C79BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZigZagConversion", "Leetcode\ZigZagConversion\ZigZagConversion.csproj", "{765434F0-0183-472D-940E-43702D82CC5C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -88,6 +90,10 @@ Global
 		{ADE34EDE-D041-4791-A1A7-1BA78D9C79BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADE34EDE-D041-4791-A1A7-1BA78D9C79BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADE34EDE-D041-4791-A1A7-1BA78D9C79BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{765434F0-0183-472D-940E-43702D82CC5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{765434F0-0183-472D-940E-43702D82CC5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{765434F0-0183-472D-940E-43702D82CC5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{765434F0-0183-472D-940E-43702D82CC5C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -106,6 +112,7 @@ Global
 		{CEFFC61B-B1D1-415A-8BAB-ECD45BCD2CDE} = {501E4173-7216-4489-96A3-C1DCE94A2A35}
 		{2FE98F56-2CA4-41BB-BFBF-70F7A070236E} = {501E4173-7216-4489-96A3-C1DCE94A2A35}
 		{ADE34EDE-D041-4791-A1A7-1BA78D9C79BC} = {501E4173-7216-4489-96A3-C1DCE94A2A35}
+		{765434F0-0183-472D-940E-43702D82CC5C} = {501E4173-7216-4489-96A3-C1DCE94A2A35}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2D7423F2-B02B-46B6-85C3-E08C49ED50C5}
