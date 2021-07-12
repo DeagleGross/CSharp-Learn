@@ -1,0 +1,19 @@
+{
+  "profiles": {
+    "ContainerWithMostWater.cs": {
+      "commandName": "Project"
+    },
+    "LinkedListSum.cs": {
+      "commandName": "Project"
+    },
+    "MaxConsecutiveOnes.cs": {
+      "commandName": "Project"
+    },
+    "PascalTriangle.cs": {
+      "commandName": "Project"
+    },
+    "ZigZagConversion.cs": {
+      "commandName": "Project"
+    }
+  }
+}
