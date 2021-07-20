@@ -48,7 +48,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContainerWithMostWater", "L
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZigZagConversion", "Leetcode\ZigZagConversion\ZigZagConversion.csproj", "{765434F0-0183-472D-940E-43702D82CC5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetcodeSolutions", "LeetcodeSolutions\LeetcodeSolutions.csproj", "{4CCB1CCD-0203-442C-9882-FC8CFA66E84F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeetcodeSolutions", "LeetcodeSolutions\LeetcodeSolutions.csproj", "{4CCB1CCD-0203-442C-9882-FC8CFA66E84F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
