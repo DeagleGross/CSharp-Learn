@@ -17,5 +17,5 @@ If you want to explore .NET Core sources, here is `Task`'s [TaskAwaiter GetAwait
 [public readonly struct TaskAwaiter : ICriticalNotifyCompletion, ITaskAwaiter](https://source.dot.net/#System.Private.CoreLib/TaskAwaiter.cs,56)
 
 There are two different approaches to making something awaitable:  
-1 - [develop new awaiter type that exposes above described pattern](Custom\)  
-2 - [use `Task` or `Task<T>` types to use their awaiters](Default\)
+1 - [develop new awaiter type that exposes above described pattern](Custom)  
+2 - [use `Task` or `Task<T>` types to use their awaiters](Default)
