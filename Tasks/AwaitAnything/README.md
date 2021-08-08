@@ -1,9 +1,8 @@
 # Await Anything
-Source: [Microsoft DevBlog, Stephen Toub - await anything](https://devblogs.microsoft.com/pfxteam/await-anything/)
+Source: [Microsoft DevBlog, Stephen Toub - await anything](https://devblogs.microsoft.com/pfxteam/await-anything/)  
+Author: **Stephen Toub**
 
-## Description
-
-### What you need
+## What you need
 `await` keyword and everything asynchronous happening to it in C# is pattern based. That's awesome, because one can even `await` type that is not `Task` or `Task<TResult>`!
 
 Imagine you want to create a type `MyClass` that could be awaited. This is what a type has to expose:

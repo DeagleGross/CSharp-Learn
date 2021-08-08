@@ -40,6 +40,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Leetcode", "Leetcode", "{50
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeetcodeSolutions", "LeetcodeSolutions\LeetcodeSolutions.csproj", "{4CCB1CCD-0203-442C-9882-FC8CFA66E84F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dissecting_Async_Methods", "Dissecting_Async_Methods", "{8D340093-3EA8-4590-8BBF-617698319E7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DissectingAsyncMethods", "Tasks\DissectingAsyncMethods\DissectingAsyncMethods.csproj", "{37010597-D4D2-4F0A-918F-A3DAD29999AC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -70,6 +74,10 @@ Global
 		{4CCB1CCD-0203-442C-9882-FC8CFA66E84F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4CCB1CCD-0203-442C-9882-FC8CFA66E84F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4CCB1CCD-0203-442C-9882-FC8CFA66E84F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37010597-D4D2-4F0A-918F-A3DAD29999AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37010597-D4D2-4F0A-918F-A3DAD29999AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37010597-D4D2-4F0A-918F-A3DAD29999AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37010597-D4D2-4F0A-918F-A3DAD29999AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,6 +93,8 @@ Global
 		{93CE7BB1-4D41-4370-931D-C7DEB8715880} = {FE63581C-7AEF-4F96-BCDB-0224AD7FCED2}
 		{57F2D660-6BB8-441B-84AC-DA87126281D3} = {C6EE66D3-84D2-4346-9FAE-56B51B0FD777}
 		{4CCB1CCD-0203-442C-9882-FC8CFA66E84F} = {501E4173-7216-4489-96A3-C1DCE94A2A35}
+		{8D340093-3EA8-4590-8BBF-617698319E7D} = {03870F84-7763-4EE7-B3AB-F9F5A4F0E27C}
+		{37010597-D4D2-4F0A-918F-A3DAD29999AC} = {8D340093-3EA8-4590-8BBF-617698319E7D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2D7423F2-B02B-46B6-85C3-E08C49ED50C5}
