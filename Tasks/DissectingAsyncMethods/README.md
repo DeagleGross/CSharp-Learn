@@ -105,4 +105,4 @@ The most interesting collaboration is happening when an awaited task **is not fi
 - The state machine calls `__builder.AwaitUnsafeOnCompleted(ref awaiter, ref this);` to register itself as the task’s continuation.
 - The builder makes sure that when the task is finished a `IAsyncStateMachine.MoveNext` method gets called:
 - The builder captures the current `ExecutionContext` and creates a `MoveNextRunner` instance to associate it with the current state machine instance. Then it creates an `Action` instance from `MoveNextRunner.Run` that will move the state machine forward under the captured execution context.
-- The builder calls TaskAwaiter.UnsafeOnCompleted(action)that schedules a given action as a continuation of an awaited task.
+- The builder calls `TaskAwaiter.UnsafeOnCompleted(action)` that schedules a given action as a continuation of an awaited task.
