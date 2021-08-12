@@ -44,9 +44,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dissecting_Async_Methods", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DissectingAsyncMethods", "Tasks\DissectingAsyncMethods\DissectingAsyncMethods.csproj", "{37010597-D4D2-4F0A-918F-A3DAD29999AC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TaskContext", "Tasks\TaskContext", "{EF0B56FE-C6BB-4094-A50C-ABE3790D223E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AwaitingMethods", "AwaitingMethods", "{EF0B56FE-C6BB-4094-A50C-ABE3790D223E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskContext", "Tasks\TaskContext\TaskContext.csproj", "{87FB8D07-C763-4EA2-A396-233DF923DCCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AwaitingMethods", "Tasks\AwaitingMethods\AwaitingMethods.csproj", "{87FB8D07-C763-4EA2-A396-233DF923DCCA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
