@@ -48,6 +48,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AwaitingMethods", "Awaiting
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AwaitingMethods", "Tasks\AwaitingMethods\AwaitingMethods.csproj", "{87FB8D07-C763-4EA2-A396-233DF923DCCA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncInternals", "Tasks\AsyncInternals\AsyncInternals.csproj", "{9A1834D0-710F-409D-997A-2F3058EB943B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -86,6 +88,10 @@ Global
 		{87FB8D07-C763-4EA2-A396-233DF923DCCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87FB8D07-C763-4EA2-A396-233DF923DCCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87FB8D07-C763-4EA2-A396-233DF923DCCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A1834D0-710F-409D-997A-2F3058EB943B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A1834D0-710F-409D-997A-2F3058EB943B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A1834D0-710F-409D-997A-2F3058EB943B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A1834D0-710F-409D-997A-2F3058EB943B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -105,6 +111,7 @@ Global
 		{37010597-D4D2-4F0A-918F-A3DAD29999AC} = {8D340093-3EA8-4590-8BBF-617698319E7D}
 		{EF0B56FE-C6BB-4094-A50C-ABE3790D223E} = {03870F84-7763-4EE7-B3AB-F9F5A4F0E27C}
 		{87FB8D07-C763-4EA2-A396-233DF923DCCA} = {EF0B56FE-C6BB-4094-A50C-ABE3790D223E}
+		{9A1834D0-710F-409D-997A-2F3058EB943B} = {03870F84-7763-4EE7-B3AB-F9F5A4F0E27C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2D7423F2-B02B-46B6-85C3-E08C49ED50C5}

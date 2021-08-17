@@ -40,3 +40,39 @@ Summary:
 ## ValueTask
 `Task` is a class, so it is allocated on the heap and needs to be collected by GC.
 To avoid explicit allocation we can you `ValueTask`, which is a struct and is allocated on the stack.
+
+See [PooledValueTaskSource](PooledValueTaskSource\Program.cs) by Konrad Kkokosa.
+
+---
+## Synchronization Context
+
+`ISynchronizeInvoke` - life before `SynchronizationContext`.  
+It provides a way to sync or async execute a delegate.
+It ties communication and threads.
+If we dont need specific thread - as in ASP.NET - we should **not** use `ISynchronizeInvoke`. So `SynchronizationContext` emerged.
+
+`ExecutionContext` is a bag holding logical context of the execution.
+Before .NET 4.5 `LogicalCallContext` was performing shadow copies and couldn't be used between asynchronous points of invocation.
+Starting in .NET 4.6 there is an `AsyncLocal<T>` class working as TLS variables for tasks.
+Methods with *unsafe* do not propagate the context - for instance `ThreadPool.UnsafeQueueUserWorkItem`.
+
+`SynchronizationContext` class is a base class that provides a free-threaded context with no synchronization:
+- `OperationStarted` and `OperationCompleted` => handles notifications
+- `Send` - sync message
+- `Post` - async message
+- `Current` - gets synchronization context for the thread
+
+**When awaiting the awaitable type the current context is captured.**
+Effectively, synchronization context is a global variable.
+- If `SynchronizationContext.Current` is not null, then this context is captured:
+  - For UI thread it is a UI context - `WindowsFormsSynchronizationContext, DispatcherSynchronizationContext, WinRTSynchronizationContext, WinRTCoreDispatcherBasedSynchronizationCOntext`
+  - For ASP.NET request it is an ASP.NET context - `AspNetSynchronizationCOntext`
+
+- Otherwise it is current `TaskScheduler`:
+  - `TaskScheduler.Default` is the thread pool context
+  - ASP.NET Core doesn't have a separate context - no risk of deadlock, no need to use `ConfigureAwait(false)`
+
+![contexts in apps](synchronizationContextInDifferentApps.jpg)
+
+---
+## State Machine
