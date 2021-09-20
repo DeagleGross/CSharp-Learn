@@ -15,7 +15,7 @@ static string LongestPalindrome(string s)
 	string result = s[0].ToString();
 
 	int start = 0;
-
+	
 	Dictionary<char, List<int>> letterPositions = new();
 
 
