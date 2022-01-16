@@ -10,10 +10,10 @@ namespace DataStructures.HashTable
 		/// <summary>
 		/// Defines structure containing key and value of dictionary
 		/// </summary>
-        private struct Entry<TKey, TValue>
+        private struct Entry<TEntryKey, TEntryValue>
         {
-            public TKey Key;
-            public TValue Value;
+            public TEntryKey Key;
+            public TEntryValue Value;
 
             // if hashcode is null, then entry is not defined - this is a marker for entry
             public int? HashCode;

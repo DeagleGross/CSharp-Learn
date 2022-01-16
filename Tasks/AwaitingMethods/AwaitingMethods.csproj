@@ -6,7 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="EduAsync\" />
+    <Compile Remove="EduAsync\**" />
+    <EmbeddedResource Remove="EduAsync\**" />
+    <None Remove="EduAsync\**" />
   </ItemGroup>
 
 </Project>

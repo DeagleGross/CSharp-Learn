@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace TaskContext
+namespace AwaitingMethods
 {
     class Program
     {
@@ -20,7 +20,7 @@ namespace TaskContext
             VoidAsync();
             Console.WriteLine("After VoidAsync");
 
-            async void VoidAsync() { }
+            Task VoidAsync() { return Task.CompletedTask; }
         }
 
         static async Task LazyTest()

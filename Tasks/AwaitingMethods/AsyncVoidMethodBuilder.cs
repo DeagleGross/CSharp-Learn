@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 using System.Security;
 
-namespace System.Runtime.CompilerServices
+namespace AwaitingMethods
 {
     /// <summary>
     /// https://referencesource.microsoft.com/#mscorlib/system/runtime/compilerservices/AsyncMethodBuilder.cs,c983aa3f7c40052f,references
