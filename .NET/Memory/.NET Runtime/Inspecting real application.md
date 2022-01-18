@@ -1,7 +1,7 @@
 # Inspecting real application
 
 For inspecting we can use dnSpy. Just publish a simple `hello world`-like application as winx64 hosted app and open single .dll with dnSpy.
-It will look like this
+It will look like this  
 ![](./resources/dnspy-dll-view.png)
 
 What does all of dll-internals stand for?
