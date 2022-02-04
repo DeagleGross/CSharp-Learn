@@ -88,8 +88,12 @@ public class ContinousArray
 		counts.Add(0, -1);
 
 		int maxLength = 0;
-		int count = 0; // incerement when we see 1, decrement when we see 0
+		int count = 0; 
 
+		// incerement count when we see 1, decrement when we see 0 (or vice-versa - it does not really matter)
+		// if at any moment, the countcountcount becomes zero, it implies that we've encountered equal number of zeros and ones from the beginning till the current index of the array (i)
+		// if we encounter the same count twice while traversing the array, it means that the number of zeros and ones are equal between the indices corresponding to the equal count values.
+		
 		for (int i = 0; i < nums.Length; i++)
 		{
 			if (nums[i] == 1)
