@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
+// https://leetcode.com/problems/reverse-integer/
+
 namespace LeetCodeSolutions.RandomTasks
 {
 	[TestClass]
@@ -67,7 +69,7 @@ namespace LeetCodeSolutions.RandomTasks
 					{
 						var number = PopDigit(ref temp);
 
-						ret = ret * 10 + number;
+						ret += ret * 10 + number;
 					}
 
 					return ret * multiplier;
