@@ -7,5 +7,6 @@
 
 ### Type basics
 1. [Type Layout](./Type%20Basics/Type%20Layout.md)
-2. [](./Type%20Basics/)
-3. [](./Type%20Basics/)
+2. [Stack vs heap](./Type%20Basics/Stack%20vs%20Heap.md)
+3. [NullReferenceException](./Type%20Basics/NullReferenceException.md)
+4. [Array of classes \ structs](./Type%20Basics/Array%20of%20classes%20and%20structs.md)
