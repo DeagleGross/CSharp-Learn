@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
@@ -10,7 +7,7 @@ using Shouldly;
 
 // https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/
 
-namespace LeetCodeSolutions.RandomTasks
+namespace LeetCodeSolutions.RandomTasks.Trees
 {
 	[TestClass]
 	public class SortedLinkedListToBst
