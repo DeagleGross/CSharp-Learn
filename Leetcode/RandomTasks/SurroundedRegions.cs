@@ -72,6 +72,7 @@ namespace LeetCodeSolutions.RandomTasks
 			}
 
 			// Step 3). flip the cells to their correct final states
+
 			for (int r = 0; r < _rows; ++r)
 			{
 				for (int c = 0; c < _cols; ++c)
