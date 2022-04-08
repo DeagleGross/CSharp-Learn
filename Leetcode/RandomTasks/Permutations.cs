@@ -31,27 +31,27 @@ namespace LeetCodeSolutions.RandomTasks
 			// init output list
 			IList<IList<int>> output = new List<IList<int>>();
 
-			Backtrack(nums.Length, nums, output, 0);
+			Backtrack(nums, output, 0);
 
 			return output;
 		}
 
-		private void Backtrack(int sequenceLength, IList<int> nums, IList<IList<int>> output, int firstPositionToTry)
+		private void Backtrack(IList<int> nums, IList<IList<int>> output, int firstPositionToTry)
 		{
 			// if all integers are used up
-			if (firstPositionToTry == sequenceLength)
+			if (firstPositionToTry == nums.Count)
 			{
 				output.Add(new List<int>(nums));
 			}
 
-			for (int i = firstPositionToTry; i < sequenceLength; i++)
+			for (int i = firstPositionToTry; i < nums.Count; i++)
 			{
 				// place i-th integer first 
 				// in the current permutation
-				
+
 				Swap(nums, firstPositionToTry, i);
 				// use next integers to complete the permutations
-				Backtrack(sequenceLength, nums, output, firstPositionToTry + 1);
+				Backtrack(nums, output, firstPositionToTry + 1);
 				// backtrack (swap elements back)
 				Swap(nums, firstPositionToTry, i);
 			}
