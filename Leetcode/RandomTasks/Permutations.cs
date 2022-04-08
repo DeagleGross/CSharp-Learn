@@ -24,6 +24,47 @@ namespace LeetCodeSolutions.RandomTasks
 			//Print(result).ShouldBe("[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]");
 		}
 
+		#region Backtracking solution (from problem solution)
+
+		public IList<IList<int>> Permute_Backtrack(int[] nums)
+		{
+			// init output list
+			IList<IList<int>> output = new List<IList<int>>();
+
+			Backtrack(nums.Length, nums, output, 0);
+
+			return output;
+		}
+
+		private void Backtrack(int sequenceLength, IList<int> nums, IList<IList<int>> output, int firstPositionToTry)
+		{
+			// if all integers are used up
+			if (firstPositionToTry == sequenceLength)
+			{
+				output.Add(new List<int>(nums));
+			}
+
+			for (int i = firstPositionToTry; i < sequenceLength; i++)
+			{
+				// place i-th integer first 
+				// in the current permutation
+				
+				Swap(nums, firstPositionToTry, i);
+				// use next integers to complete the permutations
+				Backtrack(sequenceLength, nums, output, firstPositionToTry + 1);
+				// backtrack (swap elements back)
+				Swap(nums, firstPositionToTry, i);
+			}
+		}
+
+		private IList<T> Swap<T>(IList<T> list, int indexA, int indexB)
+		{
+			(list[indexA], list[indexB]) = (list[indexB], list[indexA]);
+			return list;
+		}
+
+		#endregion
+
 		public IList<IList<int>> Permute(int[] nums)
 		{
 			IList<IList<int>> ret = new List<IList<int>>(); // length - factorial of nums.Length
