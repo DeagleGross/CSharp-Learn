@@ -36,9 +36,10 @@ namespace LeetCodeSolutions.RandomTasks
 			return output;
 		}
 
+		// The great explanation of this technique is given in https://leetcode.com/problems/permutations-ii/solution/
 		private void Backtrack(IList<int> nums, IList<IList<int>> output, int firstPositionToTry)
 		{
-			// if all integers are used up
+			// if all integers are used up - we've built a permutation
 			if (firstPositionToTry == nums.Count)
 			{
 				output.Add(new List<int>(nums));
@@ -50,8 +51,10 @@ namespace LeetCodeSolutions.RandomTasks
 				// in the current permutation
 
 				Swap(nums, firstPositionToTry, i);
+
 				// use next integers to complete the permutations
 				Backtrack(nums, output, firstPositionToTry + 1);
+
 				// backtrack (swap elements back)
 				Swap(nums, firstPositionToTry, i);
 			}
