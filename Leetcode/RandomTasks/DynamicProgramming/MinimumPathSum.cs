@@ -4,7 +4,7 @@ using Shouldly;
 
 // https://leetcode.com/problems/minimum-path-sum/
 
-namespace LeetCodeSolutions.DynamicProgramming
+namespace LeetCodeSolutions.RandomTasks.DynamicProgramming
 {
 	[TestClass]
 	public class MinimumPathSum

@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
 // https://leetcode.com/problems/jump-game-ii/
 
-namespace LeetCodeSolutions.DynamicProgramming
+namespace LeetCodeSolutions.RandomTasks.DynamicProgramming
 {
 	[TestClass]
 	public class JumpGameTwo

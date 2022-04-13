@@ -1,8 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
-using System;
 
-namespace LeetCodeSolutions.DynamicProgramming;
+namespace LeetCodeSolutions.RandomTasks.DynamicProgramming;
 
 /*
 

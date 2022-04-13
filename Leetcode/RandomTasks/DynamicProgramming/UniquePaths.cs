@@ -3,7 +3,7 @@ using Shouldly;
 
 // https://leetcode.com/problems/unique-paths/
 
-namespace LeetCodeSolutions.DynamicProgramming
+namespace LeetCodeSolutions.RandomTasks.DynamicProgramming
 {
 	[TestClass]
 	public class UniquePaths

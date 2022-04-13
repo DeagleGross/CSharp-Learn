@@ -3,7 +3,7 @@ using Shouldly;
 
 // https://leetcode.com/problems/unique-binary-search-trees/
 
-namespace LeetCodeSolutions.DynamicProgramming
+namespace LeetCodeSolutions.RandomTasks.DynamicProgramming
 {
 	[TestClass]
 	public class UniqueBinarySearchTrees

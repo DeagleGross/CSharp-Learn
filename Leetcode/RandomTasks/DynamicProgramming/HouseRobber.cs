@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Odbc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
-namespace LeetCodeSolutions.DynamicProgramming;
+namespace LeetCodeSolutions.RandomTasks.DynamicProgramming;
 
 /*
 
