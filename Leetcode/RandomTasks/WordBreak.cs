@@ -86,7 +86,7 @@ namespace LeetCodeSolutions.RandomTasks
 
 				// check if we have string prefix in dictionary and the rest of the sttring in dictionary using recursion
 				if (wordDict.Contains(prefix)
-					&& WordBreak_Recursive(s, wordDict, end))
+					&& WordBreak_Memo(s, wordDict, end, memo))
 				{
 					memo[start] = true;
 					return true;
