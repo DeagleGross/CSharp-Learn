@@ -4,7 +4,7 @@ using Shouldly;
 
 //https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
 
-namespace LeetCodeSolutions.RandomTasks;
+namespace LeetCodeSolutions.RandomTasks.Trees;
 
 [TestClass]
 public class LowestCommonAncestorOfABinaryTree
@@ -17,18 +17,18 @@ public class LowestCommonAncestorOfABinaryTree
         TreeNode q = new(2);
 
         var ret = LowestCommonAncestor(tree, p, q);
-        ret.Value.ShouldBe(1);
+        ret.val.ShouldBe(1);
     }
 
-    static TreeNode LowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q)
+    public TreeNode LowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q)
     {
         TreeNode found = null;
-        Visit(root, p.Value, q.Value, ref found);
+        Visit(root, p.val, q.val, ref found);
 
         return found;
     }
 
-    static bool Visit(TreeNode node, int valueLeft, int valueRight, ref TreeNode found)
+    private bool Visit(TreeNode node, int valueLeft, int valueRight, ref TreeNode found)
     {
         if (node == null)
         {
@@ -38,12 +38,12 @@ public class LowestCommonAncestorOfABinaryTree
         // it's better to use ints than bools since we need "at least two" condition
 
         int isNodeItself =
-            node.Value == valueLeft
-            || node.Value == valueRight ? 1 : 0;
+            node.val == valueLeft
+            || node.val == valueRight ? 1 : 0;
 
 
-        int foundOnTheLeft = Visit(node.Left, valueLeft, valueRight, ref found) ? 1 : 0;
-        int foundOnTheRight = Visit(node.Right, valueLeft, valueRight, ref found) ? 1 : 0;
+        int foundOnTheLeft = Visit(node.left, valueLeft, valueRight, ref found) ? 1 : 0;
+        int foundOnTheRight = Visit(node.right, valueLeft, valueRight, ref found) ? 1 : 0;
 
         if (isNodeItself + foundOnTheRight + foundOnTheLeft >= 2)
         {
@@ -53,7 +53,7 @@ public class LowestCommonAncestorOfABinaryTree
         return isNodeItself + foundOnTheRight + foundOnTheLeft > 0;
     }
 
-    static TreeNode ConstructTree(params int?[] values)
+    private TreeNode ConstructTree(params int?[] values)
     {
         var root = new TreeNode(values[0]!.Value);
 
@@ -77,8 +77,8 @@ public class LowestCommonAncestorOfABinaryTree
                 // fill up the left node
                 if (!isSkipNode)
                 {
-                    nextNode.Left = new(currentValue.Value);
-                    nodesToFill.Enqueue(nextNode.Left);
+                    nextNode.left = new(currentValue.Value);
+                    nodesToFill.Enqueue(nextNode.left);
                 }
 
                 isLeft = false;
@@ -88,8 +88,8 @@ public class LowestCommonAncestorOfABinaryTree
                 // fill up right node
                 if (!isSkipNode)
                 {
-                    nextNode.Right = new(currentValue!.Value);
-                    nodesToFill.Enqueue(nextNode.Right);
+                    nextNode.right = new(currentValue!.Value);
+                    nodesToFill.Enqueue(nextNode.right);
                 }
 
                 isLeft = true;
@@ -102,18 +102,18 @@ public class LowestCommonAncestorOfABinaryTree
 
     public class TreeNode
     {
-        public int Value;
-        public TreeNode Left;
-        public TreeNode Right;
+        public int val;
+        public TreeNode left;
+        public TreeNode right;
 
         public TreeNode(int x)
         {
-            Value = x;
+            val = x;
         }
 
         public override string ToString()
         {
-            return $"Value={Value}; Left={Left}; Right={Right}";
+            return $"Value={val}; Left={left}; Right={right}";
         }
     }
 }
