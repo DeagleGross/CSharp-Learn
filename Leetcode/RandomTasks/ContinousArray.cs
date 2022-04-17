@@ -88,7 +88,7 @@ public class ContinousArray
 		counts.Add(0, -1);
 
 		int maxLength = 0;
-		int count = 0; 
+		int count = 0;
 
 		// incerement count when we see 1, decrement when we see 0 (or vice-versa - it does not really matter)
 		// if at any moment, the countcountcount becomes zero, it implies that we've encountered equal number of zeros and ones from the beginning till the current index of the array (i)
