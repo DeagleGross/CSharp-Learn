@@ -44,7 +44,7 @@ namespace LeetCodeSolutions.RandomTasks
 			int start = 0;
 			int end = 0;
 
-			int count = 0;
+			int ovelappingIntervals = 0;
 
 			List<int[]> ret = new List<int[]>();
 
@@ -57,15 +57,15 @@ namespace LeetCodeSolutions.RandomTasks
 
 				if (currentIntervalStart <= currentIntervalEnd)
 				{
-					count++;
+					ovelappingIntervals++;
 					start++;
 				}
 				else
 				{
-					count--;
+					ovelappingIntervals--;
 					end++;
 
-					if(count == 0)
+					if(ovelappingIntervals == 0)
 					{
 						ret.Add(new[] {mergedIntervalStart, currentIntervalEnd});
 						mergedIntervalStart = currentIntervalStart;
@@ -73,7 +73,7 @@ namespace LeetCodeSolutions.RandomTasks
 				}
 			}
 
-			if (count > 0)
+			if (ovelappingIntervals > 0)
 			{
 				ret.Add(new []{mergedIntervalStart, ends[^1]});
 			}
