@@ -24,3 +24,4 @@
 
 ## Learn TCPIP one-by-one
 1. [How Ethernet works](./Ethernet.md)
+2. [How IP works](./IP.md)
