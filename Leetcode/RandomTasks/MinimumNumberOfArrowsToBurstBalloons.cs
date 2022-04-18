@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
@@ -106,57 +108,33 @@ namespace LeetCodeSolutions.RandomTasks
 
 		public int FindMinArrowShots(int[][] points)
 		{
-			List<int> starts = new();
-			List<int> ends = new();
+			List<Point> baloons = new List<Point>();
 
 			for (int i = 0; i < points.Length; i++)
 			{
-				starts.Add(points[i][0]);
-
-				ends.Add(points[i][1]);
+				baloons.Add(new Point(points[i][0], points[i][1]));
 			}
 
-			starts.Sort();
-			ends.Sort();
+			baloons = baloons.OrderBy(p => p.Y).ToList();
 
-			var start = 0;
-			var end = 0;
+			int arrows = 1;
 
-			int arrows = 0;
+			var lastBaloonEnd = baloons[0].Y;
 
-			var overlappedBaloons = 0;
+			int baloon = 1;
 
-			while (start < starts.Count)
+			while (baloon < baloons.Count)
 			{
-				var currentStart = starts[start];
-				var currentEnd = ends[end];
-
-				if (currentStart < currentEnd)
-				{
-					overlappedBaloons++;
-					start++;
-				}
-				else if (currentStart == currentEnd)
+				var currentBaloon = baloons[baloon];
+				if (currentBaloon.X > lastBaloonEnd)
 				{
 					arrows++;
-
-					start++;
-					end += overlappedBaloons+1; // we don't need to process destroyed baloons ends
-					overlappedBaloons = 0;
+					lastBaloonEnd = currentBaloon.Y;
 				}
 				else
 				{
-					
-					arrows++;
-					end += overlappedBaloons; // we don't need to process destroyed baloons ends
-					overlappedBaloons = 0;
-					
+					baloon++;
 				}
-			}
-
-			if (overlappedBaloons > 0)
-			{
-				arrows++;
 			}
 
 			return arrows;
