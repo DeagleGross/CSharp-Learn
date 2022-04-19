@@ -16,16 +16,6 @@ public class MaxConsecutiveOnes3
 	[TestMethod]
 	public void Solve()
 	{
-		int flipCount = 2;
-		var arr = GenerateArray(10);
-		PrintArray(arr);
-		var longestOnesResult = LongestOnes(arr, flipCount);
-		longestOnesResult.ShouldBe(6);
-	}
-
-	[TestMethod]
-	public void Solve2()
-	{
 		int flipCount = 0;
 		var arr = new []{0, 0, 1, 1, 1, 0, 0};
 		
@@ -33,47 +23,146 @@ public class MaxConsecutiveOnes3
 		longestOnesResult.ShouldBe(3);
 	}
 
+	[TestMethod]
+	public void Solve2()
+	{
+		int flipCount = 2;
+		var arr = new []{ 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0 };
+		
+		var longestOnesResult = LongestOnes(arr, flipCount);
+		longestOnesResult.ShouldBe(6);
+	}
+
+	[TestMethod]
+	public void Solve3()
+	{
+		int flipCount = 3;
+		var arr = new []{ 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1};
+		
+		var longestOnesResult = LongestOnes(arr, flipCount);
+		longestOnesResult.ShouldBe(10);
+	}
+	
+	[TestMethod]
+	public void Solve4()
+	{
+		int flipCount = 4;
+		var arr = new []{0, 0, 0, 1};
+		
+		var longestOnesResult = LongestOnes(arr, flipCount);
+		longestOnesResult.ShouldBe(4);
+	}
+	
+	[TestMethod]
+	public void Solve5()
+	{
+		int flipCount = 0;
+		var arr = new []{1, 1, 1, 0, 0, 0, 1, 1, 1, 1};
+		
+		var longestOnesResult = LongestOnes(arr, flipCount);
+		longestOnesResult.ShouldBe(4);
+	}
+
 	public int LongestOnes(int[] nums, int k)
 	{
-		int windowStart = 0;
-		var windowEnd = 0;
-		var maxWindowLength = 0;
-
-		Queue<int> zeroIndexes = new();
-
-		for (int i = 0; i < nums.Length; i++)
+		if (nums.Length == 1)
 		{
-			if (nums[i] == 0)
+			if(k > 0)
 			{
-				if (zeroIndexes.Count < k)
+				return 1;
+			}
+			else
+			{
+				return 0;
+			}
+		}
+
+		if (nums.Length == k)
+		{
+			return nums.Length;
+		}
+
+		if (k == 0)
+		{
+			var p = 0;
+
+			int mx = 0;
+			int l = 0;
+			while (p < nums.Length)
+			{
+				if (nums[p] == 1)
 				{
-					// we still have flips left
-					zeroIndexes.Enqueue(i);
+					l++;
+					p++;
+					mx = Math.Max(l, mx);
 				}
 				else
 				{
-					// we don't have any flips left
-					var currentWindowLength = windowEnd - windowStart + 1;
-					if (currentWindowLength > maxWindowLength)
-					{
-						maxWindowLength = currentWindowLength;
-					}
-
-					windowStart = zeroIndexes.Dequeue() + 1;
-					zeroIndexes.Enqueue(i);
+					// 0
+					mx = Math.Max(l, mx);
+					l = 0;
+					p++;
 				}
 			}
 
-			windowEnd = i;
+			return mx;
 		}
 
-		var lastWindowLength = windowEnd - windowStart + 1;
-		if (lastWindowLength > maxWindowLength)
+		int flipsSoFar = 0;
+
+		int left = 0;
+		int right = 1;
+
+		int max = 0;
+
+		Queue<int> flippedZeroPosition = new Queue<int>();
+
+		if (nums[0] == 0 && k > 0)
 		{
-			return lastWindowLength;
+			flipsSoFar++;
+			flippedZeroPosition.Enqueue(0);
+			max = 1;
 		}
 
-		return maxWindowLength;
+		while (left < nums.Length - 1 && right < nums.Length)
+		{
+			if (nums[right] == 1)
+			{
+				max = Math.Max(right - left + 1, max);
+				right++;
+				continue;
+			}
+
+			if (nums[right] == 0)
+			{
+				if (flipsSoFar < k)
+				{
+					flippedZeroPosition.Enqueue(right);
+
+					max = Math.Max(right - left + 1, max);
+					flipsSoFar++;
+					right++;
+				}
+				else
+				{
+					left = flippedZeroPosition.Dequeue() + 1;
+
+					if (left > right)
+					{
+						break;
+					}
+
+					right--;
+					flipsSoFar--;
+
+					max = Math.Max(right - left + 1, max);
+
+					right++;
+				}
+			}
+		}
+
+		return max;
 	}
 
 	private int[] GenerateArray(int length)
