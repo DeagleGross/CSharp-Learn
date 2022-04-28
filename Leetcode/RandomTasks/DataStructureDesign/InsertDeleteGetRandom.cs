@@ -55,7 +55,7 @@ namespace LeetCodeSolutions.RandomTasks.DataStructureDesign
 
 		public class RandomizedSet
 		{
-			private Random _rnd = new Random(DateTime.Now.Millisecond);
+			private readonly Random _rnd = new Random(DateTime.Now.Millisecond);
 
 			private class SetItem
 			{
@@ -63,8 +63,6 @@ namespace LeetCodeSolutions.RandomTasks.DataStructureDesign
 			}
 
 			private readonly List<SetItem> _values = new();
-
-			// this needs to be updated when value is removed
 			private readonly Dictionary<int, SetItem> _valueItems = new();
 
 			public RandomizedSet()
@@ -113,12 +111,11 @@ namespace LeetCodeSolutions.RandomTasks.DataStructureDesign
 				//Span<byte> number = stackalloc byte[4];
 				//RandomNumberGenerator.Fill(number);
 				//var integer = Math.Abs(BitConverter.ToInt32(number));
+				//var index = integer % _values.Count;
 
 				var integer = _rnd.Next(0, _values.Count);
-
-				var index = integer % _values.Count;
-
-				return _values[index].Value;
+				
+				return _values[integer].Value;
 			}
 		}
 	}
