@@ -6,6 +6,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Shouldly;
 
 // https://leetcode.com/problems/insert-delete-getrandom-o1/
 
@@ -53,17 +54,30 @@ namespace LeetCodeSolutions.RandomTasks.DataStructureDesign
 			set.GetRandom();
 		}
 
+		[TestMethod]
+		public void Solve3()
+		{
+			var set = new RandomizedSet();
+
+			set.Remove(0);
+			set.Remove(0);
+
+			set.Insert(0);
+
+			set.GetRandom();
+
+			set.Remove(0);
+			var t1= set.Insert(0);
+
+			t1.ShouldBe(true);
+		}
+
 		public class RandomizedSet
 		{
 			private readonly Random _rnd = new Random(DateTime.Now.Millisecond);
 
-			private class SetItem
-			{
-				public int Value;
-			}
-
-			private readonly List<SetItem> _values = new();
-			private readonly Dictionary<int, SetItem> _valueItems = new();
+			private readonly List<int> _values = new();
+			private readonly Dictionary<int, int> _valuePositions = new();
 
 			public RandomizedSet()
 			{
@@ -72,34 +86,42 @@ namespace LeetCodeSolutions.RandomTasks.DataStructureDesign
 
 			public bool Insert(int val)
 			{
-				if (_valueItems.ContainsKey(val))
+				if (_valuePositions.ContainsKey(val))
 				{
 					return false;
 				}
 
-				var setItem = new SetItem()
-				{
-					Value = val
-				};
-
-				_values.Add(setItem);
-
-				_valueItems.Add(val, setItem);
+				_values.Add(val);
+				_valuePositions.Add(val, _values.Count-1);
 
 				return true;
 			}
 
 			public bool Remove(int val)
 			{
-				if (!_valueItems.ContainsKey(val))
+				/*
+				To delete a value at arbitrary index takes linear time. 
+				The solution here is to always delete the last value:
+				    Swap the element to delete with the last one.
+				    Pop the last element out.
+				*/
+
+				if (!_valuePositions.ContainsKey(val))
 				{
 					return false;
 				}
 
-				var setItem = _valueItems[val];
+				// move the last element to the place idx of the element to delete
+				int lastElement = _values[^1];
+				int elementToRemovePosition = _valuePositions[val];
 
-				_values.Remove(setItem);
-				_valueItems.Remove(val);
+				_values[elementToRemovePosition] = lastElement;
+				_valuePositions[lastElement] = elementToRemovePosition;
+
+				// delete the last element
+
+				_values.RemoveAt(_values.Count-1);
+				_valuePositions.Remove(val);
 
 				return true;
 			}
@@ -115,7 +137,7 @@ namespace LeetCodeSolutions.RandomTasks.DataStructureDesign
 
 				var integer = _rnd.Next(0, _values.Count);
 				
-				return _values[integer].Value;
+				return _values[integer];
 			}
 		}
 	}
