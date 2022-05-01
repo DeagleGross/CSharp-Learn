@@ -13,7 +13,7 @@ namespace LeetCodeSolutions.RandomTasks.GraphTheory
 	[TestClass]
 	public class FindTheCelebrity
 	{
-		[TestMethod]
+		// test cases can't be performed since we don't know Knows method from base class on LeetCode
 		public void Solve()
 		{
 			int[][] graph = new int[][]
@@ -30,7 +30,7 @@ namespace LeetCodeSolutions.RandomTasks.GraphTheory
 			result.ShouldBe(1);
 		}
 
-		// This method is defined in solution class parent on LeetCode
+		// This method is defined in solution base class on LeetCode
 		bool Knows(int a, int b)
 		{
 			return true;
