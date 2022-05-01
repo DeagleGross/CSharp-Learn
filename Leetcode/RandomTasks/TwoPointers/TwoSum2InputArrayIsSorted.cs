@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
 // https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
 
-namespace LeetCodeSolutions.RandomTasks
+namespace LeetCodeSolutions.RandomTasks.TwoPointers
 {
 	[TestClass]
 	public class TwoSum2InputArrayIsSorted

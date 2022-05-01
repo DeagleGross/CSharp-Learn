@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
 // https://leetcode.com/problems/next-permutation/
 
-namespace LeetCodeSolutions.RandomTasks
+namespace LeetCodeSolutions.RandomTasks.Permutations
 {
 	[TestClass]
 	public class NextPermutationTask

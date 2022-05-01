@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
-namespace LeetCodeSolutions.RandomTasks
+// https://leetcode.com/problems/course-schedule-ii/
+
+namespace LeetCodeSolutions.RandomTasks.GraphTheory
 {
 	[TestClass]
 	public class CourseSchedule2

@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 // https://leetcode.com/problems/permutations-ii/
 
-namespace LeetCodeSolutions.RandomTasks
+namespace LeetCodeSolutions.RandomTasks.Permutations
 {
 	[TestClass]
 	public class Permutations2

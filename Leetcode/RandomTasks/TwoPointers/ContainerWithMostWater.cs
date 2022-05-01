@@ -4,7 +4,7 @@ using Shouldly;
 
 // https://leetcode.com/problems/container-with-most-water/
 
-namespace LeetCodeSolutions.RandomTasks;
+namespace LeetCodeSolutions.RandomTasks.TwoPointers;
 
 [TestClass]
 public class ContainerWithMostWater

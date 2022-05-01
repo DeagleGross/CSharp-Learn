@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
 using Shouldly;
 
-namespace LeetCodeSolutions.RandomTasks;
+namespace LeetCodeSolutions.RandomTasks.Counter;
 
 /*https://leetcode.com/problems/contiguous-array/
  Given a binary array nums, return the maximum length of a contiguous subarray with an equal number of 0 and 1.

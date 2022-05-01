@@ -4,7 +4,7 @@ using Shouldly;
 
 // https://leetcode.com/problems/add-two-numbers/
 
-namespace LeetCodeSolutions.RandomTasks;
+namespace LeetCodeSolutions.RandomTasks.LinkedLists;
 
 [TestClass]
 public class LinkedListSum

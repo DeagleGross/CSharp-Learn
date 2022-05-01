@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+// https://leetcode.com/problems/linked-list-random-node/
+
 namespace LeetCodeSolutions.RandomTasks.Sampling
 {
 	[TestClass]
