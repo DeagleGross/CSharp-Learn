@@ -170,6 +170,12 @@ namespace LeetCodeSolutions.RandomTasks.Trees
 				return;
 			}
 
+			if (_foundTarget && root.val < _target.val)
+			{
+				// if value is smaller that the whole subtree does nbot have a value greater than target
+				return;
+			}
+
 			_foundTarget = _foundTarget || root.val == _target.val;
 
 			if (_foundTarget && root.val != _target.val)
@@ -200,5 +206,33 @@ namespace LeetCodeSolutions.RandomTasks.Trees
 
 			InOrderTraversal(root.right);
 		}
+
+		#region From solution
+
+		public TreeNode InorderSuccessor_Optimal(TreeNode root, TreeNode p)
+		{
+			TreeNode successor = null;
+
+			while (root != null)
+			{
+
+				if (p.val >= root.val)
+				{
+					root = root.right;
+				}
+				else
+				{
+					// that implies that the successor must lie in the left subtree and that the current node
+					// is a potential candidate for inorder successor.
+					// Thus, we update our local variable for keeping track of the successor, successor, to node.
+					successor = root;
+					root = root.left;
+				}
+			}
+
+			return successor;
+		}
+
+		#endregion
 	}
 }
