@@ -218,10 +218,13 @@ namespace LeetCodeSolutions.RandomTasks.Trees
 
 				if (p.val >= root.val)
 				{
+					// mans that we don't need to look in the left subtree
 					root = root.right;
 				}
 				else
 				{
+					// mans that we don't need to look in the right subtree
+
 					// that implies that the successor must lie in the left subtree and that the current node
 					// is a potential candidate for inorder successor.
 					// Thus, we update our local variable for keeping track of the successor, successor, to node.
