@@ -124,7 +124,6 @@ namespace LeetCodeSolutions.RandomTasks.Trees
 		{
 			_left.Add(root.val);
 
-
 			Dfs(root.left, true, false);
 			Dfs(root.right, false, true);
 

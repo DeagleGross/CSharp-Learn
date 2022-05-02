@@ -73,6 +73,7 @@ namespace LeetCodeSolutions.RandomTasks.Sampling
 
 				while (currentNode != null)
 				{
+					// reservoir sampling
 					var rnd = _rnd.Next(0, nodesCount + 1);
 					if (rnd == 0)
 					{
