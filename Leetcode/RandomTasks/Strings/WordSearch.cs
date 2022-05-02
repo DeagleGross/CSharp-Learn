@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
 // https://leetcode.com/problems/word-search/
 
-namespace LeetCodeSolutions.RandomTasks
+namespace LeetCodeSolutions.RandomTasks.Strings
 {
 	[TestClass]
 	public class WordSearch

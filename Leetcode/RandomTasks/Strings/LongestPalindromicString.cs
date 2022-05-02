@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
-namespace LeetCodeSolutions.RandomTasks;
+namespace LeetCodeSolutions.RandomTasks.Strings;
 
 [TestClass]
 public class LongestPalindromicString
