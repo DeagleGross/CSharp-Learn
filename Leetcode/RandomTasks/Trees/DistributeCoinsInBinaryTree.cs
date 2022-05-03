@@ -125,6 +125,16 @@ namespace LeetCodeSolutions.RandomTasks.Trees
 
 		private int _moves;
 
+		/*
+		Let dfs(node) be the excess number of coins in the subtree at or below this node: 
+		namely, the number of coins in the subtree, minus the number of nodes in the subtree. 
+		Then, the number of moves we make from this node to and from its children is 
+			abs(dfs(node.left)) + abs(dfs(node.right)). 
+		After, we have an excess of 
+			node.val + dfs(node.left) + dfs(node.right) - 1 
+		coins at this node.
+		*/
+
 		private int RedistibuteCoins(TreeNode node)
 		{
 			if (node == null)
