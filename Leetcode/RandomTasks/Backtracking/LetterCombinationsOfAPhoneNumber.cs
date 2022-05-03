@@ -65,8 +65,6 @@ namespace LeetCodeSolutions.RandomTasks.Backtracking
 				AddToCombination(charsToAdd, current);
 			}
 
-			//Backtrack(0, current, ret);
-
 			return current;
 		}
 
