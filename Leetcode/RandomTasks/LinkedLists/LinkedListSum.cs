@@ -9,14 +9,14 @@ namespace LeetCodeSolutions.RandomTasks.LinkedLists;
 [TestClass]
 public class LinkedListSum
 {
-    [TestMethod]
-    public void Solve()
-    {
-        var sum2 = AddTwoNumbers(new ListNode(9, 9, 9, 9, 9, 9, 9), new ListNode(9, 9, 9));
-        sum2.ToString().ShouldBe("10000998");
+	[TestMethod]
+	public void Solve()
+	{
+		var sum2 = AddTwoNumbers(new ListNode(9, 9, 9, 9, 9, 9, 9), new ListNode(9, 9, 9));
+		sum2.ToString().ShouldBe("10000998");
 	}
 
-    static ListNode AddTwoNumbers(ListNode l1, ListNode l2)
+	static ListNode AddTwoNumbers(ListNode l1, ListNode l2)
 	{
 		Console.WriteLine($"{l1}+{l2}");
 
