@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace LeetCodeSolutions.RandomTasks
+// https://leetcode.com/problems/basic-calculator-ii/
+
+namespace LeetCodeSolutions.RandomTasks.Claculator
 {
 	[TestClass]
 	public class BasicCalculator2
@@ -65,11 +65,74 @@ namespace LeetCodeSolutions.RandomTasks
 			result.Should().Be(1);
 		}
 
+		public int Calculate_FromSolution(String s)
+		{
+			if (string.IsNullOrEmpty(s))
+			{
+				return 0;
+			}
+
+			int expressionLength = s.Length;
+
+			Stack<int> evaluationStack = new();
+
+			int currentNumber = 0;
+			char operation = '+';
+
+			for (int i = 0; i < expressionLength; i++)
+			{
+				char currentChar = s[i];
+				if (char.IsDigit(currentChar))
+				{
+					// this is int.Parse done manually and digit by digit
+					currentNumber = (currentNumber * 10) + (currentChar - '0');
+					continue;
+				}
+
+				if (!char.IsDigit(currentChar) 
+					&& !char.IsWhiteSpace(currentChar) 
+					|| i == expressionLength - 1)
+				{
+					if (operation == '-')
+					{
+						evaluationStack.Push(-currentNumber);
+					}
+					else if (operation == '+')
+					{
+						evaluationStack.Push(currentNumber);
+					}
+					else if (operation == '*')
+					{
+						evaluationStack.Push(evaluationStack.Pop() * currentNumber);
+					}
+					else if (operation == '/')
+					{
+						evaluationStack.Push(evaluationStack.Pop() / currentNumber);
+					}
+					operation = currentChar;
+					currentNumber = 0;
+				}
+			}
+
+			int result = 0;
+
+			while (evaluationStack.Count > 0)
+			{
+				result += evaluationStack.Pop();
+			}
+			return result;
+		}
+
+		#region My Solution (works but a bit too long)
+
 		public int Calculate(string s)
 		{
 			var expression = s.Trim();
 
-			Stack<string> evaluationStack = new();
+			// this stack holds only ints that we need to add in the end
+			// if current operation is "-" - we add -curentNumber to this stack
+			// if current operation is "+" - we simply add currentNumber to this stack
+			Stack<int> evaluationStack = new();
 
 			int position = 0;
 
@@ -79,7 +142,7 @@ namespace LeetCodeSolutions.RandomTasks
 			{
 				if (token.tokenType == TokenType.Number)
 				{
-					evaluationStack.Push(token.token);
+					evaluationStack.Push(int.Parse(token.token));
 					token = GetNextToken(expression, ref position);
 					continue;
 				}
@@ -89,8 +152,19 @@ namespace LeetCodeSolutions.RandomTasks
 					if (token.token == "+"
 						|| token.token == "-")
 					{
-						evaluationStack.Push(token.token);
-						token = GetNextToken(expression, ref position);
+						var nextNumber = GetNextToken(expression, ref position);
+						var value = int.Parse(nextNumber.token);
+
+						if (token.token == "-")
+						{
+							evaluationStack.Push(-value);
+						}
+						else
+						{
+							evaluationStack.Push(value);
+						}
+
+						token= GetNextToken(expression, ref position);
 						continue;
 					}
 					else
@@ -98,14 +172,13 @@ namespace LeetCodeSolutions.RandomTasks
 						var operand1 = evaluationStack.Pop();
 						var operand2 = GetNextToken(expression, ref position);
 
-						var result = token.token switch
-						{
-							"*" => int.Parse(operand1) * int.Parse(operand2.token),
-							"/" => int.Parse(operand1) / int.Parse(operand2.token),
+						var result = token.token switch {
+							"*" => operand1 * int.Parse(operand2.token),
+							"/" => operand1 / int.Parse(operand2.token),
 							_ => throw new ArgumentOutOfRangeException()
 						};
 
-						evaluationStack.Push(result.ToString());
+						evaluationStack.Push(result);
 
 						token = GetNextToken(expression, ref position);
 					}
@@ -114,36 +187,13 @@ namespace LeetCodeSolutions.RandomTasks
 
 			if (evaluationStack.Count == 1)
 			{
-				return int.Parse(evaluationStack.Pop());
-			}
-
-			var resultStack = new Stack<string>();
-			while (evaluationStack.Count > 0)
-			{
-				resultStack.Push(evaluationStack.Pop());
+				return evaluationStack.Pop();
 			}
 
 			var ret = 0;
-
-			while (resultStack.Count > 0)
+			while (evaluationStack.Count > 0)
 			{
-				var operand1 = int.Parse(resultStack.Pop());
-				var operation = resultStack.Pop();
-				var operand2 = int.Parse(resultStack.Pop());
-
-				var result = operation switch
-				{
-					"+" => operand1 + operand2,
-					"-" => operand1 - operand2,
-					_ => throw new ArgumentOutOfRangeException()
-				};
-
-				resultStack.Push(result.ToString());
-
-				if (resultStack.Count == 1)
-				{
-					return int.Parse(resultStack.Pop());
-				}
+				ret += evaluationStack.Pop();
 			}
 
 			return ret;
@@ -182,7 +232,7 @@ namespace LeetCodeSolutions.RandomTasks
 
 			StringBuilder number = new();
 			number.Append(c);
-			
+
 			while (position < s.Length && char.IsDigit(s[position]))
 			{
 				number.Append(s[position]);
@@ -190,6 +240,8 @@ namespace LeetCodeSolutions.RandomTasks
 			}
 
 			return (number.ToString(), TokenType.Number);
-		}
+		} 
+
+		#endregion
 	}
 }
