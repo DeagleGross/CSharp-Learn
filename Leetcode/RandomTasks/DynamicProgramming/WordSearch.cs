@@ -4,7 +4,7 @@ using Shouldly;
 
 // https://leetcode.com/problems/word-search/
 
-namespace LeetCodeSolutions.RandomTasks.Strings
+namespace LeetCodeSolutions.RandomTasks.DynamicProgramming
 {
 	[TestClass]
 	public class WordSearch
