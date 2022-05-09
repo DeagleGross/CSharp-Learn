@@ -32,8 +32,11 @@ namespace LeetCodeSolutions.RandomTasks.DynamicProgramming
 			// Don't know why - just remember!
 			dp[0] = 1;
 
+			// get coins one by one and try to combine them into all sums
 			foreach (var coin in coins)
 			{
+				// all combinations with only one coin is ONE COMBINATION
+
 				// trying to combine all sums that are larger that coin nominal
 				for (int sum = coin; sum <= amount; sum++)
 				{
