@@ -11,7 +11,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace LeetCodeSolutions.RandomTasks
 {
 	[TestClass]
-	public class SearchInA2DMatrix2
+	public class SearchA2DMatrix2
 	{
 		[TestMethod]
 		public void Solve()
