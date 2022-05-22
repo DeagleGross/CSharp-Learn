@@ -58,7 +58,7 @@ namespace LeetCodeSolutions.RandomTasks.DynamicProgramming
 			int[] countOfAsAfter = new int[s.Length];
 
 
-			// Preprocessing starts
+			// Preprocessing starts (calculate prefix sums for both a's and b's)
 
 			// starting with 1 because at 0 there is nothing before
 			for (int i = 1; i < s.Length; i++)

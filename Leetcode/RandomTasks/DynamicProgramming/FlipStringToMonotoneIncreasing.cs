@@ -70,5 +70,26 @@ namespace LeetCodeSolutions.RandomTasks.DynamicProgramming
 			}
 			return ans;
 		}
+
+		public int MinFlipsMonoIncr_MoreOptimal(string s)
+		{
+			int inputLength = s.Length;
+			
+			int[] prefixSumOfOnesBefore = new int[inputLength + 1];
+
+			for (int i = 0; i < inputLength; ++i)
+			{
+				prefixSumOfOnesBefore[i + 1] = prefixSumOfOnesBefore[i] + (s[i] == '1' ? 1 : 0);
+			}
+
+			int ans = int.MaxValue;
+
+			for (int j = 0; j <= inputLength; ++j)
+			{
+				ans = Math.Min(ans, prefixSumOfOnesBefore[j] + inputLength - j - (prefixSumOfOnesBefore[inputLength] - prefixSumOfOnesBefore[j]));
+			}
+
+			return ans;
+		}
 	}
 }
