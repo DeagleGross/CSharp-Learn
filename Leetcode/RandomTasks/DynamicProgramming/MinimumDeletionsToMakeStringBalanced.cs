@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 // https://leetcode.com/problems/minimum-deletions-to-make-string-balanced/
 
-namespace LeetCodeSolutions.RandomTasks.Strings
+namespace LeetCodeSolutions.RandomTasks.DynamicProgramming
 {
 	[TestClass]
 	public class MinimumDeletionsToMakeStringBalanced
