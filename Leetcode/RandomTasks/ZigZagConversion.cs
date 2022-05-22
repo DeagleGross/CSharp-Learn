@@ -20,7 +20,7 @@ public class ZigZagConversion
         output.ShouldBe("ACBD");
     }
 
-    public static string Convert(string s, int numRows)
+    public string Convert(string s, int numRows)
     {
         List<string> rows = new();
         for (int i = 0; i < numRows; i++)

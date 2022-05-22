@@ -17,7 +17,7 @@ public class ContainerWithMostWater
         area.ShouldBe(49);
     }
 
-    static int MaxArea(int[] height)
+    public int MaxArea(int[] height)
     {
         int s = 0;
 
