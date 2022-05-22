@@ -58,6 +58,49 @@ namespace LeetCodeSolutions.RandomTasks.TwoPointers
 			result.Should().Be(0);
 		}
 
+		#region From solution
+
+		// basically the solution is the same
+		public int LongestMountain_FromSolution(int[] arr)
+		{
+			int N = arr.Length;
+			int ans = 0;
+			int mountainBase = 0;
+
+			while (mountainBase < N)
+			{
+				int end = mountainBase;
+				// if base is a left-boundary
+				if (end + 1 < N && arr[end] < arr[end + 1])
+				{
+					// set end to the peak of this potential mountain
+					while (end + 1 < N && arr[end] < arr[end + 1])
+					{
+						end++;
+					}
+
+					// if end is really a peak..
+					if (end + 1 < N && arr[end] > arr[end + 1])
+					{
+						// set end to the right-boundary of mountain
+						while (end + 1 < N && arr[end] > arr[end + 1])
+						{
+							end++;
+						}
+
+						// record candidate answer
+						ans = Math.Max(ans, end - mountainBase + 1);
+					}
+				}
+
+				mountainBase = Math.Max(end, mountainBase + 1);
+			}
+
+			return ans;
+		}
+
+		#endregion
+
 		public int LongestMountain(int[] arr)
 		{
 			if (arr.Length < 3)
