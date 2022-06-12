@@ -53,29 +53,33 @@ namespace LeetCodeSolutions.RandomTasks.DynamicProgramming
 				{
 					if (i == 0 && j == 0)
 					{
-						// add first value ??
+						// add initial value
 						dp[i,j] = true;
+						continue;
 					}
-					else if (i == 0)
+
+					var targetCharToCompare = s3[i + j - 1];
+
+					if (i == 0)
 					{
 						dp[i,j] = dp[i,j - 1] 
-							&& s2[j - 1] == s3[i + j - 1];
+							&& s2[j - 1] == targetCharToCompare;
 					}
 					else if (j == 0)
 					{
 						dp[i,j] = dp[i - 1,j]
-							&& s1[i - 1] == s3[i + j - 1];
+							&& s1[i - 1] == targetCharToCompare;
 					}
 					else
 					{
 						dp[i, j] = (
 								dp[i - 1, j]
-								&& s1[i - 1] == s3[i + j - 1]
+								&& s1[i - 1] == targetCharToCompare
 							)
 							||
 							(
 								dp[i, j - 1]
-								&& s2[j - 1] == s3[i + j - 1]
+								&& s2[j - 1] == targetCharToCompare
 							);
 					}
 				}
@@ -99,24 +103,28 @@ namespace LeetCodeSolutions.RandomTasks.DynamicProgramming
 					if (i == 0 && j == 0)
 					{
 						dp[j] = true;
+						continue;
 					}
-					else if (i == 0)
+
+					var targetCharToCompare = s3[i + j - 1];
+
+					if (i == 0)
 					{
-						dp[j] = dp[j - 1] && s2[j - 1] == s3[i + j - 1];
+						dp[j] = dp[j - 1] && s2[j - 1] == targetCharToCompare;
 					}
 					else if (j == 0)
 					{
-						dp[j] = dp[j] && s1[i - 1] == s3[i + j - 1];
+						dp[j] = dp[j] && s1[i - 1] == targetCharToCompare;
 					}
 					else
 					{
 						dp[j] = (
 								dp[j]
-								&& s1[i - 1] == s3[i + j - 1]
+								&& s1[i - 1] == targetCharToCompare
 							)
 							|| (
 								dp[j - 1]
-								&& s2[j - 1] == s3[i + j - 1]
+								&& s2[j - 1] == targetCharToCompare
 							);
 					}
 				}
