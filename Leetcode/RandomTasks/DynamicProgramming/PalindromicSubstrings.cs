@@ -41,19 +41,19 @@ namespace LeetCodeSolutions.RandomTasks.DynamicProgramming
 				return 0;
 			}
 
-			bool[,] dp = new bool[n, n];
+			bool[,] isPalindrome = new bool[n, n];
 
 			// Base case: single letter substrings
 			for (int i = 0; i < n; i++, ans++)
 			{
-				dp[i, i] = true;
+				isPalindrome[i, i] = true;
 			}
 
 			// Base case: double letter substrings
 			for (int i = 0; i < n - 1; i++)
 			{
-				dp[i,i + 1] = (s[i] == s[i + 1]);
-				ans += (dp[i,i + 1] ? 1 : 0);
+				isPalindrome[i,i + 1] = (s[i] == s[i + 1]);
+				ans += (isPalindrome[i,i + 1] ? 1 : 0);
 			}
 
 			// All other cases: substrings of length 3 to n
@@ -63,8 +63,8 @@ namespace LeetCodeSolutions.RandomTasks.DynamicProgramming
 					substrEnd < n; 
 					substrStart++, substrEnd++)
 				{
-					dp[substrStart, substrEnd] = dp[substrStart + 1, substrEnd - 1] && (s[substrStart] == s[substrEnd]);
-					ans += (dp[substrStart, substrEnd]
+					isPalindrome[substrStart, substrEnd] = isPalindrome[substrStart + 1, substrEnd - 1] && (s[substrStart] == s[substrEnd]);
+					ans += (isPalindrome[substrStart, substrEnd]
 						? 1
 						: 0);
 				}
