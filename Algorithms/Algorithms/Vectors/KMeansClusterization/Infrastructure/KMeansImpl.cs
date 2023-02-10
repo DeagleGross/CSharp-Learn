@@ -15,7 +15,7 @@ internal class KMeansImpl
 	public static Dictionary<Vector, List<Vector>> ClusterVectorsNaiive(
 		ICollection<Vector> vectorsToCluster, 
 		int numberOfClusters, 
-		int numberOfSamplesPerCluster = 50,
+		int numberOfSamplesPerCluster = 50, // not used for now
 		int maxIterations = 300) 
 	{
 		// select random centroids
@@ -45,6 +45,8 @@ internal class KMeansImpl
 				return resultingClusters;
 			}
 
+			centroids = newCentroids;
+
 			currentIteration++;
 		}
 	}
@@ -72,7 +74,7 @@ internal class KMeansImpl
 			var clusteredVectors = cluster.Value;
 			var clusteredVectorsCount = clusteredVectors.Count;
 
-			Vector meanVector = new Vector(clusteredVectors[0].DimensionsCount);
+			Vector meanVector = new(clusteredVectors[0].DimensionsCount);
 
 			foreach (var clusterVector in clusteredVectors)
 			{ 
@@ -87,6 +89,25 @@ internal class KMeansImpl
 		}
 
 		return newCentroids;
+	}
+
+	private static double CalculateClusterVariance(Vector centroid, IEnumerable<Vector> vectorsInCluster)
+	{
+		// we can use this function to assess variance difference between iterations
+		double sumOfDistanceSquares = 0D;
+
+		int vectorsCount = 1;
+
+		foreach (var vector in vectorsInCluster)
+		{
+			var distanceToCentroid = VectorMath.CalculateVectorL2Distance(centroid, vector);
+			sumOfDistanceSquares += Math.Pow(distanceToCentroid, 2);
+			vectorsCount++;
+		}
+
+		var variance = sumOfDistanceSquares / vectorsCount;
+
+		return variance;
 	}
 
 	private static Dictionary<Vector, List<Vector>> AssignVectorsToClusters(
